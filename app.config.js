@@ -1,7 +1,7 @@
 export default {
   expo: {
     name: "AnimeSync",
-    slug: "animesync",
+    slug: "hellworls",
     version: "1.0.0",
     orientation: "portrait",
     icon: "./assets/icon.png",
