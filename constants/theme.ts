@@ -26,8 +26,11 @@ export const Colors = {
 };
 
 export const Fonts = {
-  body: 'Rubik',
-  heading: 'SpaceGrotesk',
+  body: 'System', // Will use SF Pro on iOS
+  heading: 'System', // Will use SF Pro on iOS
+  // When custom fonts are added, update to:
+  // body: 'Rubik',
+  // heading: 'SpaceGrotesk',
 };
 
 export const Spacing = {

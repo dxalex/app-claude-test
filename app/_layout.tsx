@@ -12,28 +12,22 @@ export default function RootLayout() {
   const loadUser = useAuthStore((state) => state.loadUser);
   const loadData = useAnimeStore((state) => state.loadData);
 
-  const [fontsLoaded] = useFonts({
-    'Rubik-Regular': require('https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nBrXw.ttf'),
-    'Rubik-Medium': require('https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nMrXw.ttf'),
-    'Rubik-SemiBold': require('https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nFrXw.ttf'),
-    'Rubik-Bold': require('https://fonts.gstatic.com/s/rubik/v28/iJWKBXyIfDnIV7nPrXw.ttf'),
-    'SpaceGrotesk-Regular': require('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj62UUsjNsFjTDJK.ttf'),
-    'SpaceGrotesk-Medium': require('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7aUUsjNsFjTDJK.ttf'),
-    'SpaceGrotesk-SemiBold': require('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj4KUksjNsFjTDJK.ttf'),
-    'SpaceGrotesk-Bold': require('https://fonts.gstatic.com/s/spacegrotesk/v16/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj5mUksjNsFjTDJK.ttf'),
-  });
+  // Using system fonts for now. To use custom fonts:
+  // 1. Download Rubik and Space Grotesk from Google Fonts
+  // 2. Place .ttf files in assets/fonts/
+  // 3. Update this to: require('../assets/fonts/FontName.ttf')
+  const [fontsLoaded] = useFonts({});
 
   useEffect(() => {
-    if (fontsLoaded) {
-      SplashScreen.hideAsync();
+    // Load user data and hide splash screen
+    const prepare = async () => {
+      await SplashScreen.hideAsync();
       loadUser();
       loadData();
-    }
-  }, [fontsLoaded]);
+    };
 
-  if (!fontsLoaded) {
-    return null;
-  }
+    prepare();
+  }, []);
 
   return (
     <>

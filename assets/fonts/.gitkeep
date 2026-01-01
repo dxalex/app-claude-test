@@ -1,0 +1,29 @@
+# Font Files
+
+Download and place font files here:
+
+## Rubik
+- Rubik-Regular.ttf
+- Rubik-Medium.ttf
+- Rubik-SemiBold.ttf
+- Rubik-Bold.ttf
+
+Download from: https://fonts.google.com/specimen/Rubik
+
+## Space Grotesk
+- SpaceGrotesk-Regular.ttf
+- SpaceGrotesk-Medium.ttf
+- SpaceGrotesk-SemiBold.ttf
+- SpaceGrotesk-Bold.ttf
+
+Download from: https://fonts.google.com/specimen/Space+Grotesk
+
+## Usage
+
+After downloading, update app/_layout.tsx to use local fonts:
+```typescript
+const [fontsLoaded] = useFonts({
+  'Rubik-Regular': require('../assets/fonts/Rubik-Regular.ttf'),
+  // ... etc
+});
+```

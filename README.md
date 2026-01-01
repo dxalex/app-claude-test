@@ -89,8 +89,8 @@ app-claude-test/
 
 - Node.js 18+
 - npm or yarn
-- Expo CLI
-- iOS Simulator (Xcode) or physical iOS device
+- Expo Go app (for quick testing) or iOS Simulator (Xcode)
+- EAS CLI (for production builds): `npm install -g eas-cli`
 
 ### Installation
 
@@ -107,12 +107,49 @@ npm install
 
 3. Start the development server:
 ```bash
-npm start
+npx expo start
 ```
 
 4. Run on iOS:
+   - **Using Expo Go** (easiest):
+     - Install Expo Go from the App Store
+     - Scan the QR code from the terminal
+
+   - **Using iOS Simulator**:
+     ```bash
+     npx expo start --ios
+     ```
+
+   - **Building with EAS** (for development builds):
+     ```bash
+     # Install EAS CLI
+     npm install -g eas-cli
+
+     # Login to Expo
+     eas login
+
+     # Build for iOS simulator
+     eas build --profile development --platform ios
+     ```
+
+## Build Configuration
+
+The project includes EAS Build configuration (`eas.json`) with three profiles:
+
+- **development**: For testing on simulator/device with development client
+- **preview**: For internal testing on physical devices
+- **production**: For App Store submission
+
+To build:
 ```bash
-npm run ios
+# Development build for simulator
+eas build --profile development --platform ios
+
+# Preview build for testing
+eas build --profile preview --platform ios
+
+# Production build
+eas build --profile production --platform ios
 ```
 
 ## Usage
