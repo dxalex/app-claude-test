@@ -39,7 +39,7 @@ export default {
         origin: false
       },
       eas: {
-        projectId: "your-project-id" // Update this after running 'eas init'
+        projectId: "3d42dd82-1ea8-43ca-a283-a39ee037e963"
       }
     }
   }
