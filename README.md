@@ -107,8 +107,16 @@ npm install
 
 3. Start the development server:
 ```bash
-npx expo start
+npm start
+# This runs Expo in offline mode to avoid api.expo.dev connection issues
 ```
+
+Or use the start script:
+```bash
+./start-expo.sh
+```
+
+> **Note**: If you see "Failed to fetch (api.expo.dev)" errors, the app is configured to run in offline mode by default. This is normal and won't affect functionality.
 
 4. Run on iOS:
    - **Using Expo Go** (easiest):
