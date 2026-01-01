@@ -15,7 +15,8 @@ export default {
       supportsTablet: true,
       bundleIdentifier: "com.animesync.app",
       infoPlist: {
-        UIBackgroundModes: ["fetch", "remote-notification"]
+        UIBackgroundModes: ["fetch", "remote-notification"],
+        ITSAppUsesNonExemptEncryption: false
       }
     },
     android: {
